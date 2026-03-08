@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm create next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-pnpm)",
+      "Bash(npm --version)",
+      "Bash(npx --version)",
+      "Bash(npm install -g pnpm)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-pnpm)",
+      "Bash(curl -s http://localhost:3000)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

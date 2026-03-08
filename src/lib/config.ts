@@ -1,0 +1,60 @@
+import type { AppConfig } from "@/adapters/types";
+
+// Config defined inline. YAML file kept as documentation reference.
+// To add exchanges/symbols, update this file and config/default.yaml.
+export const config: AppConfig = {
+  exchanges: {
+    binance: {
+      enabled: true,
+      url: "wss://stream.binance.us:9443/stream",
+      symbols: { btcusdt: "BTC-USD", ethusdt: "ETH-USD", solusdt: "SOL-USD" },
+    },
+    coinbase: {
+      enabled: true,
+      url: "wss://advanced-trade-ws.coinbase.com",
+      symbols: { "BTC-USD": "BTC-USD", "ETH-USD": "ETH-USD", "SOL-USD": "SOL-USD" },
+    },
+    kraken: {
+      enabled: true,
+      url: "wss://ws.kraken.com",
+      symbols: { "XBT/USD": "BTC-USD", "ETH/USD": "ETH-USD", "SOL/USD": "SOL-USD" },
+    },
+    okx: {
+      enabled: true,
+      url: "wss://ws.okx.com:8443/ws/v5/public",
+      symbols: { "BTC-USDT": "BTC-USD", "ETH-USDT": "ETH-USD", "SOL-USDT": "SOL-USD" },
+    },
+    bybit: {
+      enabled: true,
+      url: "wss://stream.bybit.com/v5/public/spot",
+      symbols: { BTCUSDT: "BTC-USD", ETHUSDT: "ETH-USD", SOLUSDT: "SOL-USD" },
+    },
+    gemini: {
+      enabled: true,
+      url: "wss://api.gemini.com/v1/marketdata",
+      symbols: { btcusd: "BTC-USD", ethusd: "ETH-USD", solusd: "SOL-USD" },
+    },
+    crypto_com: {
+      enabled: true,
+      url: "wss://stream.crypto.com/exchange/v1/market",
+      symbols: { btc_usdt: "BTC-USD", eth_usdt: "ETH-USD", sol_usdt: "SOL-USD" },
+    },
+  },
+  fees: {
+    binance: { maker: 0.001, taker: 0.001 },
+    coinbase: { maker: 0.004, taker: 0.006 },
+    kraken: { maker: 0.0016, taker: 0.0026 },
+    okx: { maker: 0.0008, taker: 0.001 },
+    bybit: { maker: 0.001, taker: 0.001 },
+    gemini: { maker: 0.002, taker: 0.004 },
+    crypto_com: { maker: 0.00075, taker: 0.00075 },
+  },
+  settings: {
+    maxQuoteAgeSec: 5,
+    slippageBuffer: 0.0005,
+    arbThreshold: 0.002,
+    reconnectBaseMs: 1000,
+    reconnectMaxMs: 30000,
+    heartbeatIntervalMs: 30000,
+  },
+};
